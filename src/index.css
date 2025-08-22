@@ -17,8 +17,12 @@ body {
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #1a1a1a;
+  color: #ffffff;
   background: #0a0a0a;
+}
+
+#root {
+  min-height: 100vh;
 }
 
 /* Root Variables */

@@ -6,89 +6,152 @@ import { smartContractApps } from './data/apps';
 
 function App() {
   return (
-    <div className="app-background">
-      <Header />
-      
-      <main>
-        {/* Hero Section */}
-        <section className="py-20">
-          <div className="container">
-            <div className="text-center mb-20">
-              <h1 className="text-5xl font-bold text-white mb-6 animate-fade-in-up">
-                Smart Contract Applications
-              </h1>
-              <p className="text-xl text-gray-300 font-light max-w-3xl mx-auto leading-relaxed animate-fade-in-up animate-delay-100">
-                Discover the next generation of decentralized applications built on Cosmos Hub. 
-                Experience the power of interoperability, security, and scalability.
-              </p>
-            </div>
-          </div>
-        </section>
+    <div style={{ minHeight: '100vh', background: 'linear-gradient(135deg, #0c0c0c 0%, #1a1a1a 100%)', position: 'relative' }}>
+      {/* Background overlay */}
+      <div style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        bottom: 0,
+        background: `radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                    radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.15) 0%, transparent 50%)`,
+        pointerEvents: 'none',
+        zIndex: 0
+      }}></div>
 
-        {/* Apps Grid */}
-        <section id="applications" className="py-16">
-          <div className="container">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
-              {smartContractApps.map((app, index) => (
-                <div 
-                  key={app.id} 
-                  className="animate-fade-in-up"
-                  style={{ animationDelay: `${(index + 2) * 0.1}s` }}
-                >
-                  <AppCard app={app} />
-                </div>
-              ))}
+      <div style={{ position: 'relative', zIndex: 1 }}>
+        <Header />
+        
+        <main>
+          {/* Hero Section */}
+          <section style={{ padding: '80px 0' }}>
+            <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+              <div style={{ textAlign: 'center', marginBottom: '80px' }}>
+                <h1 style={{ 
+                  fontSize: '3rem', 
+                  fontWeight: 'bold', 
+                  color: 'white', 
+                  marginBottom: '24px',
+                  lineHeight: '1.1'
+                }}>
+                  Smart Contract Applications
+                </h1>
+                <p style={{ 
+                  fontSize: '1.25rem', 
+                  color: '#a0a0a0', 
+                  fontWeight: '300',
+                  maxWidth: '48rem',
+                  margin: '0 auto',
+                  lineHeight: '1.625'
+                }}>
+                  Discover the next generation of decentralized applications built on Cosmos Hub. 
+                  Experience the power of interoperability, security, and scalability.
+                </p>
+              </div>
             </div>
+          </section>
 
-            {/* Call to Action */}
-            <div className="text-center">
-              <div className="glass-card p-12 max-w-2xl mx-auto animate-fade-in-up animate-delay-300">
-                <div className="mb-8">
-                  <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <svg className="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
-                    </svg>
+          {/* Apps Grid */}
+          <section id="applications" style={{ padding: '64px 0' }}>
+            <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '0 24px' }}>
+              <div style={{ 
+                display: 'grid', 
+                gridTemplateColumns: window.innerWidth >= 1024 ? 'repeat(2, minmax(0, 1fr))' : '1fr',
+                gap: '32px',
+                marginBottom: '80px'
+              }}>
+                {smartContractApps.map((app) => (
+                  <AppCard key={app.id} app={app} />
+                ))}
+              </div>
+
+              {/* Call to Action */}
+              <div style={{ textAlign: 'center' }}>
+                <div style={{
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(20px)',
+                  border: '1px solid rgba(255, 255, 255, 0.1)',
+                  borderRadius: '16px',
+                  padding: '48px',
+                  maxWidth: '42rem',
+                  margin: '0 auto'
+                }}>
+                  <div style={{ marginBottom: '32px' }}>
+                    <div style={{
+                      width: '64px',
+                      height: '64px',
+                      background: 'linear-gradient(to right, #3b82f6, #8b5cf6)',
+                      borderRadius: '50%',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      margin: '0 auto 24px'
+                    }}>
+                      <svg style={{ width: '32px', height: '32px', color: 'white' }} fill="currentColor" viewBox="0 0 20 20">
+                        <path fillRule="evenodd" d="M10 3a1 1 0 011 1v5h5a1 1 0 110 2h-5v5a1 1 0 11-2 0v-5H4a1 1 0 110-2h5V4a1 1 0 011-1z" clipRule="evenodd" />
+                      </svg>
+                    </div>
+                    <h3 style={{ fontSize: '1.875rem', fontWeight: 'bold', color: 'white', marginBottom: '16px' }}>
+                      Submit Your Application
+                    </h3>
+                    <p style={{ color: '#a0a0a0', fontSize: '1.125rem', lineHeight: '1.625', marginBottom: '32px' }}>
+                      Building something amazing on Cosmos Hub? Join our showcase and reach thousands 
+                      of developers and users in the Cosmos ecosystem.
+                    </p>
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-4">
-                    Submit Your Application
-                  </h3>
-                  <p className="text-gray-300 text-lg leading-relaxed mb-8">
-                    Building something amazing on Cosmos Hub? Join our showcase and reach thousands 
-                    of developers and users in the Cosmos ecosystem.
-                  </p>
-                </div>
-                
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <a
-                    href="https://github.com/username/cosmos-smart-contracts"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-primary"
-                  >
-                    <svg className="icon icon-sm mr-2" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0110 4.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.942.359.31.678.921.678 1.856 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0020 10.017C20 4.484 15.522 0 10 0z" clipRule="evenodd" />
-                    </svg>
-                    Submit on GitHub
-                  </a>
-                  <a
-                    href="https://cosmos.network"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="btn btn-outline"
-                  >
-                    Learn About Cosmos
-                    <svg className="icon icon-sm ml-2" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </a>
+                  
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', alignItems: 'center' }}>
+                    <a
+                      href="https://github.com/tacolopo/cosmos-smart-contracts"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        padding: '12px 24px',
+                        background: '#3b82f6',
+                        color: 'white',
+                        textDecoration: 'none',
+                        borderRadius: '8px',
+                        fontWeight: '500',
+                        fontSize: '0.875rem',
+                        transition: 'all 0.3s ease'
+                      }}
+                    >
+                      Submit on GitHub
+                    </a>
+                    <a
+                      href="https://cosmos.network"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        padding: '12px 24px',
+                        background: 'transparent',
+                        color: 'white',
+                        textDecoration: 'none',
+                        borderRadius: '8px',
+                        border: '1px solid rgba(255, 255, 255, 0.3)',
+                        fontWeight: '500',
+                        fontSize: '0.875rem',
+                        transition: 'all 0.3s ease'
+                      }}
+                    >
+                      Learn About Cosmos
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-        </section>
-      </main>
+          </section>
+        </main>
 
-      <Footer />
+        <Footer />
+      </div>
     </div>
   );
 }
