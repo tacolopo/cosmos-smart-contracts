@@ -104,6 +104,49 @@ const Footer = () => {
                 GitHub
               </a>
             </p>
+
+            {/* Donation Section */}
+            <div style={{ marginTop: '24px', paddingTop: '16px', borderTop: '1px solid rgba(255, 255, 255, 0.05)' }}>
+              <p style={{ color: '#666666', fontSize: '0.75rem', marginBottom: '8px' }}>
+                Donations appreciated to support this free service ✨
+              </p>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                gap: '8px',
+                background: 'rgba(255, 255, 255, 0.05)',
+                borderRadius: '8px',
+                padding: '8px 12px',
+                maxWidth: '400px',
+                margin: '0 auto'
+              }}>
+                <span style={{
+                  fontSize: '0.75rem',
+                  fontFamily: 'monospace',
+                  color: '#60a5fa',
+                  wordBreak: 'break-all'
+                }}>
+                  cosmos1qa6supftg80qh93u6894lsg4q4m25ftgfsadtw
+                </span>
+                <button
+                  onClick={() => navigator.clipboard.writeText('cosmos1qa6supftg80qh93u6894lsg4q4m25ftgfsadtw')}
+                  style={{
+                    background: 'transparent',
+                    border: 'none',
+                    fontSize: '0.75rem',
+                    color: '#666666',
+                    cursor: 'pointer',
+                    transition: 'color 0.2s'
+                  }}
+                  title="Copy donation address"
+                  onMouseEnter={(e) => e.target.style.color = '#60a5fa'}
+                  onMouseLeave={(e) => e.target.style.color = '#666666'}
+                >
+                  📋
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
