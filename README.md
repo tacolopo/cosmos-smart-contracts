@@ -1,184 +1,144 @@
-# Cosmos Hub Smart Contracts
+# Submit Your Cosmos Hub Smart Contract Application
 
-A beautiful, modern showcase of smart contract applications deployed on the Cosmos Hub. This React application highlights the innovative decentralized applications building on the Cosmos ecosystem.
+Welcome to the Cosmos Hub Smart Contracts showcase! This repository features innovative decentralized applications built on the Cosmos Hub. If you've built something amazing on Cosmos Hub, we'd love to showcase it to the community.
 
-## 🌟 Features
+## 🚀 How to Submit Your Application
 
-- **Modern UI/UX**: Beautiful, responsive design with Cosmos-themed gradients and animations
-- **App Showcase**: Dedicated cards for each smart contract application
-- **Social Links**: Direct links to Twitter, Telegram, and websites
-- **Mobile Responsive**: Optimized for all device sizes
-- **Fast Performance**: Lightweight React application with optimized assets
+### Quick Submission Process
 
-## 🚀 Featured Applications
+1. **Fork this repository** on GitHub
+2. **Add your application** to the showcase
+3. **Submit a pull request** with your app details
 
-### eSchrow
-A decentralized escrow platform that allows users to create free, permissionless escrow contracts in ATOM. Secure, transparent, and trustless transactions for the Cosmos ecosystem.
-- Website: [eschrow.com](https://eschrow.com)
-- Twitter: [@eschrowcom](https://x.com/eschrowcom)
+### Step-by-Step Instructions
 
-### PumpIt.ink
-A memecoin generator and trading platform built on Cosmos Hub. Create, launch, and trade memecoins with ease while leveraging the security and interoperability of the Cosmos ecosystem.
-- Website: [pumpit.ink](https://pumpit.ink)
-- Twitter: [@pumpitink](https://x.com/pumpitink)
-- Telegram: [pumpitink](https://t.me/pumpitink)
-
-## 🛠️ Getting Started
-
-### Prerequisites
-
-- Node.js (v14 or higher)
-- npm or yarn
-
-### Installation
-
-1. Clone the repository:
+#### 1. Fork the Repository
+- Click the "Fork" button at the top right of this repository
+- Clone your forked repository to your local machine:
 ```bash
-git clone https://github.com/username/cosmos-smart-contracts.git
+git clone https://github.com/YOUR_USERNAME/cosmos-smart-contracts.git
 cd cosmos-smart-contracts
 ```
 
-2. Install dependencies:
-```bash
-npm install
-```
-
-3. Start the development server:
-```bash
-npm start
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-## 📦 Build and Deploy
-
-### Build for Production
-
-```bash
-npm run build
-```
-
-This creates a `build` folder with optimized production files.
-
-### Deploy to GitHub Pages
-
-1. Update the `homepage` field in `package.json` with your GitHub Pages URL:
-```json
-"homepage": "https://yourusername.github.io/cosmos-smart-contracts"
-```
-
-2. Deploy:
-```bash
-npm run deploy
-```
-
-### Deploy to Other Platforms
-
-The build folder can be deployed to any static hosting service:
-- Netlify
-- Vercel
-- AWS S3
-- Firebase Hosting
-
-## 🎨 Customization
-
-### Adding New Applications
-
-1. Open `src/data/apps.js`
-2. Add a new app object to the `smartContractApps` array:
+#### 2. Add Your Application Data
+Open the file `src/data/apps.js` and add your application to the `smartContractApps` array:
 
 ```javascript
 {
-  id: 'your-app-id',
+  id: 'your-app-id', // unique identifier (lowercase, no spaces)
   title: 'Your App Name',
-  description: 'Your app description...',
-  logo: '/path-to-your-logo.png',
+  description: 'A compelling description of your app (max 200 characters)',
+  logo: '/your-logo.png', // path to your logo in the public folder
   website: 'https://yourapp.com',
   twitter: 'https://x.com/yourapp', // optional
-  telegram: 'https://t.me/yourapp' // optional
+  telegram: 'https://t.me/yourapp' // optional (set to null if not applicable)
 }
 ```
 
-3. Add your logo to the `public` folder
+#### 3. Add Your Logo
+- Place your logo file in the `public/` folder
+- Supported formats: PNG, SVG, JPG
+- Recommended size: 64x64px minimum (square aspect ratio)
+- File naming: Use lowercase with hyphens (e.g., `my-app-logo.png`)
 
-### Styling
+#### 4. Create a Pull Request
+- Commit your changes:
+```bash
+git add .
+git commit -m "Add [Your App Name] to showcase"
+git push origin main
+```
+- Go to your forked repository on GitHub
+- Click "New Pull Request"
+- Fill out the pull request template with your app details
 
-The application uses a custom CSS framework with Cosmos-themed colors and utilities. Main styles are in:
-- `src/index.css` - Global styles and utility classes
-- Individual component files for component-specific styles
+## 📋 Submission Requirements
 
-### Colors and Themes
+### ✅ Required Information
+- **App Name**: Clear, concise name
+- **Description**: Brief description (max 200 characters)
+- **Logo**: High-quality logo file
+- **Website**: Working HTTPS URL to your application
+- **Cosmos Hub Deployment**: Your app must be deployed on Cosmos Hub
 
-The app uses a purple-to-blue gradient theme inspired by the Cosmos brand. You can modify colors in `src/index.css`:
+### 🎯 Optional Information
+- **Twitter**: Your project's Twitter/X handle
+- **Telegram**: Your project's Telegram channel or group
+- **Additional social links**: Can be discussed in the PR
 
-```css
-.cosmos-gradient {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-}
+### 📝 Pull Request Template
+
+When submitting your PR, please include:
+
+```
+## Application Submission
+
+**App Name**: Your App Name
+**Website**: https://yourapp.com
+**Description**: Brief description of what your app does
+
+**Cosmos Hub Integration**: 
+- [ ] Deployed smart contracts on Cosmos Hub
+- [ ] Uses ATOM or Cosmos Hub features
+- [ ] Interacts with Cosmos Hub ecosystem
+
+**Verification**:
+- [ ] All links work and use HTTPS
+- [ ] Logo is high quality and properly sized
+- [ ] App is live and functional
+- [ ] Description is under 200 characters
+
+**Additional Notes**: 
+Any additional context about your application...
 ```
 
-## 📁 Project Structure
+## 🔍 Review Process
 
-```
-cosmos-smart-contracts/
-├── public/
-│   ├── index.html
-│   ├── manifest.json
-│   └── pumpit-logo.svg
-├── src/
-│   ├── components/
-│   │   ├── AppCard.js
-│   │   ├── Header.js
-│   │   └── Footer.js
-│   ├── data/
-│   │   └── apps.js
-│   ├── App.js
-│   ├── index.js
-│   └── index.css
-├── package.json
-└── README.md
-```
+1. **Automated Checks**: We verify all links work and the format is correct
+2. **Community Review**: The Cosmos community can review and provide feedback
+3. **Final Approval**: Maintainers approve legitimate Cosmos Hub applications
+4. **Go Live**: Your app appears on the showcase within 24-48 hours
 
-## 🤝 Contributing
+## ✨ Guidelines for Success
 
-We welcome contributions from the Cosmos community! Here's how you can help:
+### Quality Standards
+- **Legitimate Project**: Real, working application deployed on Cosmos Hub
+- **Professional Presentation**: Clean logo, clear description, working website
+- **Community Value**: Adds value to the Cosmos Hub ecosystem
+- **Functional**: App should be live and accessible to users
 
-### Adding Your Application
+### Logo Guidelines
+- **Format**: PNG, SVG, or JPG
+- **Size**: Minimum 64x64px, maximum 512x512px
+- **Aspect Ratio**: Square (1:1) preferred
+- **Quality**: High resolution, clear visibility on dark backgrounds
+- **Content**: Avoid text-heavy logos; simple, recognizable symbols work best
 
-1. Fork this repository
-2. Add your application to `src/data/apps.js`
-3. Add your logo to the `public` folder
-4. Create a pull request with:
-   - App name and description
-   - Logo (PNG, SVG, or JPG)
-   - Website URL
-   - Social media links (optional)
-   - Proof that your app is deployed on Cosmos Hub
+### Description Best Practices
+- **Concise**: Maximum 200 characters
+- **Clear**: Explain what your app does in simple terms
+- **Value-focused**: Highlight the benefit to users
+- **Cosmos-relevant**: Mention Cosmos Hub integration when relevant
 
-### Guidelines for Submissions
+## 🚫 What We Don't Accept
 
-- Applications must be deployed on Cosmos Hub
-- Provide a clear, concise description (max 200 characters)
-- Include a high-quality logo (64x64px minimum)
-- Ensure all links are working and secure (HTTPS)
-- Follow the existing code style and structure
+- Applications not deployed on Cosmos Hub
+- Broken or non-functional applications
+- Duplicate submissions
+- Applications that violate terms of service
+- Spam or low-quality submissions
+- Applications involved in illegal activities
 
-## 📄 License
+## 📞 Need Help?
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+- **Questions about submission**: Open an issue in this repository
+- **Technical problems**: Check existing issues or create a new one
+- **General inquiries**: Contact the maintainers through GitHub
 
-## 🌐 Links
+## 🌟 Featured Applications
 
-- [Cosmos Network](https://cosmos.network)
-- [Cosmos Hub](https://hub.cosmos.network)
-- [Cosmos GitHub](https://github.com/cosmos)
-
-## 🙏 Acknowledgments
-
-- Built with ❤️ for the Cosmos community
-- Inspired by the innovation happening in the Cosmos ecosystem
-- Thanks to all the developers building amazing applications on Cosmos Hub
+Once approved, your application will be featured alongside other innovative Cosmos Hub projects, reaching thousands of developers and users in the Cosmos ecosystem.
 
 ---
 
-**Note**: This is a community-driven project. We strive to showcase legitimate, high-quality applications. Please do your own research before using any featured applications.
+**Ready to showcase your Cosmos Hub application?** [Fork this repository](https://github.com/tacolopo/cosmos-smart-contracts/fork) and submit your app today!
